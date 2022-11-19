@@ -1,0 +1,8 @@
+/* For mobile phones: */
+body { overflow-y:scroll; padding-top:70px; padding-bottom:70px; }
+.link-disabled { pointer-events:none; cursor:default; opacity:0.6; }
+.scrollToTop { position:fixed; bottom:60px; right:30px; display:none; }
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+	body { padding-bottom:40px; }
+}
