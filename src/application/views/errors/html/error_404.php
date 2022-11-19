@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
 	<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 	<meta name='robots' content='noindex'>
-	<title>Erro 404 | ProtES - Consulte entradas e saídas de procedimentos</title>
+	<title>Erro 404 | Jacareí Cupcakes</title>
 	<link href='https://protes.com.br/jacarei/assets/img/protes-64.png' rel='icon' type='image/png' sizes='64x64'>
 	<link href='https://protes.com.br/jacarei/assets/img/favicon.ico' rel='icon' type='image/vnd.microsoft.icon' sizes='16x16'>
 	<!-- Bootstrap -->
@@ -25,8 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	<nav class='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
 		<span class='navbar-brand'>
-			<a href='https://protes.com.br/jacarei/'><img src='https://protes.com.br/jacarei/assets/img/protes-64.png' width='30' height='30' class='d-inline-block align-top' alt='ProtES'></a>
-			ProtES Web | Consulte entradas e saídas de procedimentos</small>
+			<a href='https://cupcakes.jacarei.info/'><img src='https://protes.com.br/jacarei/assets/img/protes-64.png' width='30' height='30' class='d-inline-block align-top' alt='Jacareí Cupcakes'></a>
+			Jacareí Cupcakes</small>
 		</span>
 	</nav>
 	<div class='container-fluid'>
@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<img class='mr-3' src='https://protes.com.br/jacarei/assets/img/confused.png' alt='Não encontrada!'>
 					<div class='media-body'>
 						<h2 class='mt-0'>Ops! Página não encontrada</h2>
-						A página que você tentou acessar não existe. Verifique o endereço digitado ou vá para a <a href='https://protes.com.br/jacarei/'>página inicial</a>.
+						A página que você tentou acessar não existe. Verifique o endereço digitado ou vá para a <a href='https://cupcakes.jacarei.info/'>página inicial</a>.
 					</div>
 				</div>
 				

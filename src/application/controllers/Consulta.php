@@ -3,8 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Consulta extends CI_Controller {
 	public function index() {
-		$data['WEB_VERSION'] = $this->view_core->getWEB_VERSION();
-		$data['head'] = $this->view_core->getHead('ProtES | Consulte entradas e saídas de procedimentos');
+		$data['head'] = $this->view_core->getHead('Jacareí Cupcakes');
 		$data['menu'] = $this->view_core->getMenu('consulta');
 		$data['footer'] = $this->view_core->getFooter();
 		//Se dataF não foi transmitida, mostra a home da consulta

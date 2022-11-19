@@ -10,8 +10,7 @@ class Login extends CI_Controller {
 		else {
 			if(!isset($_POST['login'])) {
 				//PAGINA DE LOGIN
-				$data['WEB_VERSION'] = $this->view_core->getWEB_VERSION();
-				$data['head'] = $this->view_core->getHead('ProtES | Consulte entradas e saídas de procedimentos');
+				$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Login');
 				$data['header'] = $this->view_core->getHeader();
 				$this->load->view('login_page', $data);
 			} else {
