@@ -7,61 +7,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php print $menu; ?>
 		<div class='container-fluid'>
 			<section class='row'>
+				<div class='col-md-3' role='main'>
+					<div class='card' style='width: 18rem;'>
+						<img src='<?php echo base_url('assets/img/cupcake-baunilha.jpg');?>' height='250' class='card-img-top' alt='Cupcake de  baunilha'>
+						<div class='card-body'>
+							<h5 class='card-title'>Cupcake de baunilha</h5>
+							<p class='card-text'>Massa fofinha e creme de baunilha.</p>
+							<h5><span class="badge bg-secondary text-white">R$ 5,90</span></h5>
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3' role='main'>
+					<div class='card' style='width: 18rem;'>
+						<img src='<?php echo base_url('assets/img/cupcake-chocolate.jpg');?>' height='250' class='card-img-top' alt='Cupcake de  baunilha'>
+						<div class='card-body'>
+							<h5 class='card-title'>Cupcake de chocolate</h5>
+							<p class='card-text'>Uma explosão de chocolate.</p>
+							<h5><span class="badge bg-secondary text-white">R$ 7,90</span></h5>
+						</div>
+					</div>
+				</div>
+				<div class='col-md-3' role='main'>
+					<div class='card' style='width: 18rem;'>
+						<img src='<?php echo base_url('assets/img/cupcake-redvelvet.jpg');?>' height='250' class='card-img-top' alt='Cupcake de  baunilha'>
+						<div class='card-body'>
+							<h5 class='card-title'>Cupcake red velvet</h5>
+							<p class='card-text'>Sabor inconfundível.</p>
+							<h5><span class="badge bg-secondary text-white">R$ 8,90</span></h5>
+						</div>
+					</div>
+					
 				<div class='col-md-12' role='main'>
-					<form action='consulta' method='post'>
-						<div class='form-row'>
-							<label for='inputDataI' class='col-sm-1 col-form-label'>Data inicial</label>
-							<div class='form-group col-md-2'>
-								<div class='input-group'>
-									<div class='input-group-prepend' data-toggle='tooltip' title='Considerar data inicial?'>
-										<div class='input-group-text'> <input type='checkbox' id='checkConsideraDataI' name='consideraDataI' value='1' onclick='mostrarDataI()' <?php if(isset($consideraDataI) && $consideraDataI==1) print" checked"; ?>> </div>
-									</div>
-									<input type='text' class='form-control' id='inputDataI' name='dataI' placeholder='Data inicial' <?php if(isset($dataI) && $consideraDataI==1) print" value='{$dataI}'"; else print"readOnly"; ?>>
-									<script type='text/javascript'>
-										function mostrarDataI() {
-											var checkBox = document.getElementById("checkConsideraDataI");
-											var inputDataI = document.getElementById("inputDataI");
-											if (checkBox.checked == true){
-												var data = new Date(); data.setYear(data.getFullYear()-1);
-												inputDataI.value = data.toLocaleDateString();
-												inputDataI.readOnly = false;
-											} else {
-												inputDataI.value = "";
-												inputDataI.readOnly = true;
-											}
-										}
-									</script>
-								</div>
-							</div>
-							<label for='inputDataF' class='col-sm-1 col-form-label'>Data final</label>
-							<div class='form-group col-md-2'>
-								<input type='text' class='form-control' id='inputDataF' name='dataF' placeholder='Data final' value='<?php if(isset($dataF)) print"{$dataF}"; else print date('d/m/Y') ?>' required>
-							</div>
-							<div class='form-group col-md-6'>
-								<input type='text' class='form-control' id='inputProced' name='proced' placeholder='Procedimento' <?php if(isset($proced)) print" value='{$proced}'"; ?> onkeyup='this.value = this.value.toUpperCase();'>
-							</div>
-						</div>
-						<div class='form-row'>
-							<div class='form-group col-md-4'>
-								<input type='text' class='form-control' id='inputPaciente' name='paciente' placeholder='Nome do paciente' <?php if(isset($paciente)) print" value='{$paciente}'"; ?> onkeyup='this.value = this.value.toUpperCase();'>
-							</div>
-							<div class='form-group col-md-2'>
-								<input type='text' class='form-control' id='inputNasc' name='nasc' placeholder='Nascimento' <?php if(isset($nasc)) print" value='{$nasc}'"; ?>>
-							</div>
-							<div class='form-group col-md-6'>
-								<button type='submit' class='btn btn-primary' onclick='textTrim()'>Consultar</button>
-								<script type='text/javascript'>
-									function textTrim() {
-										var inputProced = document.getElementById("inputProced");
-										var inputPaciente = document.getElementById("inputPaciente");
-										inputProced.value=inputProced.value.trim();
-										inputPaciente.value=inputPaciente.value.trim();
-									}
-								</script>
-								<?php if(isset($erro)) print "&nbsp;&nbsp;<small style='color:red;'>Favor preencher ao menos um campo (nome do paciente, nascimento ou procedimento).</small>"; ?>
-							</div>
-						</div>
-					</form>
 
 					<?php if(isset($consulta)) { print "
 					<div class='table-responsive'>

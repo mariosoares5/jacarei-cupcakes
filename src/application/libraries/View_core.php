@@ -42,22 +42,9 @@ class View_core{
 					</button>
 					<div class='collapse navbar-collapse' id='navbarText'>
 						<ul class='navbar-nav mr-auto'>
-							<li class='nav-item"; if($active=='consulta')$menu.=" active"; $menu.="'>
-								<a class='nav-link' href='{$jac_cupcakes_home}'>Consulta situação <span class='sr-only'>(current)</span></a>
-							</li>
-							<li class='nav-item dropdown"; if(strstr($active,"relatorio")!=false)$menu.=" active"; $menu.="'>
-								<a class='nav-link dropdown-toggle' href='{$jac_cupcakes_home}relatorio_demanda' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-								Relatórios</a>
-								<div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-									<a class='dropdown-item"; if($active=='relatorio_demanda')$menu.=" active"; $menu.="' href='{$jac_cupcakes_home}relatorio_demanda'>Demanda</a>
-									<!-- a class='dropdown-item"; if($active=='relatorio_entradas')$menu.=" active"; $menu.="' href='{$jac_cupcakes_home}relatorio_entradas'>Entradas</a -->
-									<!-- a class='dropdown-item"; if($active=='relatorio_saidas')$menu.=" active"; $menu.="' href='{$jac_cupcakes_home}relatorio_saidas'>Saídas</a -->
-									<!-- a class='dropdown-item"; if($active=='relatorio_remessas')$menu.=" active"; $menu.="' href='{$jac_cupcakes_home}relatorio_remessas'>Remessas</a -->
-								</div>
-							</li>
 						</ul>
-						<form class='form-inline' action='".base_url('login/sair')."'>
-							<button class='btn btn-sm btn-outline-primary my-2 my-sm-0' type='submit'>Sair</button>
+						<form class='form-inline' action='".base_url('login')."'>
+							<button class='btn btn-sm btn-outline-primary my-2 my-sm-0' type='submit'>Login</button>
 						</form>
 					</div>
 					
@@ -80,7 +67,11 @@ class View_core{
 		$up_img = base_url('assets/img/up-32.png');
 		return "<footer class='footer fixed-bottom pt-2 bg-light'>
 					<small class='row py-2'>
-						<div class='col-md-6 text-muted text-center'>Rodapé</div>
+						<div class='col-md-12 text-center'>
+							Jacareí Cupcakes<br>
+							Av. Major Confeiteiro, 100 - Jarim Paraíba<br>
+							Jacareí - SP
+						</div>
 					</small>
 				</footer>
 				<a href='#topo' class='scrollToTop'><img src='{$up_img}'></a>
