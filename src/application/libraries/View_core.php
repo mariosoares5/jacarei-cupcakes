@@ -68,8 +68,8 @@ class View_core{
 		return "<footer class='footer fixed-bottom pt-2 bg-light'>
 					<small class='row py-2'>
 						<div class='col-md-12 text-center'>
-							Jacareí Cupcakes<br>
-							Av. Major Confeiteiro, 100 - Jarim Paraíba<br>
+							<b>Jacareí Cupcakes</b><br>
+							Av. Major Confeiteiro, 100 - Jardim Paraíba<br>
 							Jacareí - SP
 						</div>
 					</small>

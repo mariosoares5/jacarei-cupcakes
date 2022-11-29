@@ -8,13 +8,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 	<meta name='robots' content='noindex'>
 	<title>Erro 404 | Jacareí Cupcakes</title>
-	<link href='https://protes.com.br/jacarei/assets/img/protes-64.png' rel='icon' type='image/png' sizes='64x64'>
-	<link href='https://protes.com.br/jacarei/assets/img/favicon.ico' rel='icon' type='image/vnd.microsoft.icon' sizes='16x16'>
+	<link href='https://cupcakes.jacarei.info/assets/img/jac_cupcakes.png' rel='icon' type='image/png' sizes='64x64'>
+	<link href='https://cupcakes.jacarei.info/assets/img/jac_cupcakes.ico' rel='icon' type='image/vnd.microsoft.icon' sizes='16x16'>
 	<!-- Bootstrap -->
-	<link href='https://protes.com.br/jacarei/assets/css/bootstrap.min.css' rel='stylesheet'>
-	<link href='https://protes.com.br/jacarei/assets/css/protes_jacarei_style.css' rel='stylesheet'>
-	<script src='https://protes.com.br/jacarei/assets/js/jquery.min.js'></script>
-	<script src='https://protes.com.br/jacarei/assets/js/bootstrap.min.js'></script>
+	<link href='https://cupcakes.jacarei.info/assets/css/bootstrap.min.css' rel='stylesheet'>
+	<link href='https://cupcakes.jacarei.info/assets/css/protes_jacarei_style.css' rel='stylesheet'>
+	<script src='https://cupcakes.jacarei.info/assets/js/jquery.min.js'></script>
+	<script src='https://cupcakes.jacarei.info/assets/js/bootstrap.min.js'></script>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 	<nav class='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
 		<span class='navbar-brand'>
-			<a href='https://cupcakes.jacarei.info/'><img src='https://protes.com.br/jacarei/assets/img/protes-64.png' width='30' height='30' class='d-inline-block align-top' alt='Jacareí Cupcakes'></a>
+			<a href='https://cupcakes.jacarei.info/'><img src='https://cupcakes.jacarei.info/assets/img/jac_cupcakes.png' width='30' height='30' class='d-inline-block align-top' alt='Jacareí Cupcakes'></a>
 			Jacareí Cupcakes</small>
 		</span>
 	</nav>
@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<section class='row justify-content-md-center mt-5'>
 			<div class='col-md-6' role='main'>
 				<div class='media'>
-					<img class='mr-3' src='https://protes.com.br/jacarei/assets/img/confused.png' alt='Não encontrada!'>
+					<img class='mr-3' src='https://cupcakes.jacarei.info/assets/img/confused.png' alt='Não encontrada!'>
 					<div class='media-body'>
 						<h2 class='mt-0'>Ops! Página não encontrada</h2>
 						A página que você tentou acessar não existe. Verifique o endereço digitado ou vá para a <a href='https://cupcakes.jacarei.info/'>página inicial</a>.
