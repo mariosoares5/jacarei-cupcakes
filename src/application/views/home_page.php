@@ -24,10 +24,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								</div>
 							</div>
 						</div>";
-						
-						/*	if($vitrine[$i][10] == '') print" ";
-							if($vitrine[$i][15] != '') print" ";
-						*/
 					}
 				}
 			} ?>

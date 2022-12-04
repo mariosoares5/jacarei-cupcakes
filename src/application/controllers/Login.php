@@ -5,7 +5,7 @@ class Login extends CI_Controller {
 	public function index() {
 		if(isset($_SESSION['id_usuario']) && isset($_SESSION['nome_usuario'])) { 
 			// Usuário já logado! Redireciona para a página de consulta
-			redirect(base_url(''));
+			redirect(base_url('produtos'));
 		}
 		else {
 			if(!isset($_POST['login'])) {
@@ -29,10 +29,10 @@ class Login extends CI_Controller {
 							// TUDO OK! Agora, passa os dados para a sessão e redireciona o usuário
 							$_SESSION['id_usuario']= $row->idFuncionario;
 							$_SESSION['nome_usuario'] = stripslashes($row->nome);
-							// Usuário logado, redireciona para a página de consulta
-							redirect(base_url(''));
+							// Usuário logado, redireciona para a página de produtos
+							redirect(base_url('produtos'));
 						} else //Senha invalida 
-							$data['erro'] = 'Login ou se777nha inv&aacute;lidos!';
+							$data['erro'] = 'Login ou senha inv&aacute;lidos!';
 					} else 
 						$data['erro'] = 'Login ou senha inv&aacute;lidos!';
 				}
@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 	}
 	
 	public function sair() {
-		session_destroy(); redirect(base_url('login')); //encerra sessao e redireciona para a página de login
+		session_destroy(); redirect(base_url('')); //encerra sessao e redireciona para a vitrine
 	}
 }
 ?>
