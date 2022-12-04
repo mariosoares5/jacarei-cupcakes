@@ -26,5 +26,10 @@ class Produtos_model extends CI_Model {
 		}
 		return $resposta;
 	}
+	
+	public function getProduto($id) {
+		$query = $this->db->query("SELECT idProduto, nomeProduto, preco, descricao, foto FROM produto WHERE idProduto={$id};");
+		return $query->row();
+	}
 }
 ?>

@@ -8,7 +8,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class='container-fluid'>
 			<section class='row'>
 				<div class='col-md-12' role='main'>
-					<h3>Produtos</h3>
+					<nav aria-label='breadcrumb'>
+						<ol class='breadcrumb'>
+							<li class='breadcrumb-item'><a href='<?php print base_url(''); ?>'>Home</a></li>
+							<li class='breadcrumb-item active' aria-current='page'>Produtos</li>
+						</ol>
+					</nav>
+					<h3>Produtos <form class='form-inline' method='post' action='<?php print base_url('produtos/novo'); ?>'><button class='btn btn-sm btn-primary my-sm-0' type='submit'>
+									<img src='<?php print base_url('assets/img/novo.png'); ?>' alt='Novo'>Novo</button></form></h3>
 					<table class='table'>
 						<thead>
 							<tr>
@@ -27,6 +34,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							$quant = sizeof($lista_produtos);
 							if($quant > 0) {
 								for($i=0; $i<$quant; $i++) {
+									$url_alterar = base_url('produtos/'.$lista_produtos[$i][0]);
+									$url_excluir = base_url('produtos/excluir/'.$lista_produtos[$i][0]);
+									$url_img = base_url('assets/img');
 									print "<tr>
 										<td>{$lista_produtos[$i][0]}</td>
 										<th scope='row'>{$lista_produtos[$i][1]}</th>
@@ -34,8 +44,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<td>{$lista_produtos[$i][3]}</td>
 										<td>{$lista_produtos[$i][4]}</td>
 										<td>{$lista_produtos[$i][5]}</td>
-										<td></td>
-										<td></td>
+										<td><form class='form-inline' method='post' action='{$url_alterar}'>
+											<button class='btn btn-sm btn-warning my-sm-0' type='submit'>
+											<img src='{$url_img}/alterar.png' alt='Alterar'></button></form></td>
+										<td><form class='form-inline' method='post' action='{$url_excluir}'>
+											<button class='btn btn-sm btn-danger my-sm-0' type='submit'>
+											<img src='{$url_img}/excluir.png' alt='Excluir'></button></form></td>
 									</tr>";
 								}
 							}

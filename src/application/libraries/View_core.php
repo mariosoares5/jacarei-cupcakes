@@ -48,9 +48,9 @@ class View_core{
 						</ul>";
 						if($active == 'produtos')
 							$menu .= "<span class='navbar-text'>Bem-Vindo <b>{$_SESSION["nome_usuario"]}</b>! &nbsp;</span>
-							<form class='form-inline' action='".base_url('login/sair')."'><button class='btn btn-sm btn-outline-primary my-2 my-sm-0' type='submit'>Sair</button>";
+							<form class='form-inline' method='post' action='".base_url('login/sair')."'><button class='btn btn-sm btn-outline-primary my-2 my-sm-0' type='submit'>Sair</button>";
 						else
-							$menu .= "<form class='form-inline' action='".base_url('login')."'><button class='btn btn-sm btn-outline-secondary my-2 my-sm-0' type='submit'>Login</button>";
+							$menu .= "<form class='form-inline' method='post' action='".base_url('login')."'><button class='btn btn-sm btn-outline-secondary my-2 my-sm-0' type='submit'>Login</button>";
 			$menu .= "	</form>
 					</div>
 					
