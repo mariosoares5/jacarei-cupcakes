@@ -9,7 +9,7 @@ class Produtos_model extends CI_Model {
 	public function getProdutos() {
 		$requisicao = "SELECT p.idProduto AS idProduto, p.nomeProduto AS nomeProduto, p.preco AS preco,
 						p.descricao AS descricao, p.foto AS foto, f.nome AS funcionario
-						FROM produto AS p, funcionario as f WHERE (p.idFuncionario = f.idFuncionario);";
+						FROM produto AS p, funcionario as f WHERE (p.idFuncionario = f.idFuncionario) ORDER BY p.idProduto;";
 		$query = $this->db->query($requisicao);
 		$results = $query->result(); //executando requisicao
 		
@@ -41,6 +41,18 @@ class Produtos_model extends CI_Model {
 			'idFuncionario' => $idFuncionario
 		);
 		return $this->db->insert('produto',$data);
+	}
+	
+	public function updateProduto($idProduto, $nomeProduto, $preco, $descricao, $foto, $idFuncionario) {
+		$data = array(
+			'nomeProduto' => $nomeProduto,
+			'preco' => $preco,
+			'descricao' => $descricao,
+			'foto' => $foto,
+			'idFuncionario' => $idFuncionario
+		);
+		$this->db->where('idProduto', $idProduto);
+		return $this->db->update('produto',$data);
 	}
 }
 ?>

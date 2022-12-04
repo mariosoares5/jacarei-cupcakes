@@ -17,38 +17,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</nav>
 					<h3>Editar produto</h3>
 					
-					<div class='mb-3 row'>
-						<label for='idProduto' class='col-sm-1 col-form-label'>Código</label>
-						<div class='col-sm-3'>
-							<input type='text' readonly class='form-control' id='idProduto' name='idProduto' value='<?php print $produto->idProduto; ?>'>
+					<form method='post' action='<?php print base_url('produtos/editar/'.$produto->idProduto); ?>'>
+						<div class='mb-3 row'>
+							<label for='idProduto' class='col-sm-1 col-form-label'>Código</label>
+							<div class='col-sm-3'>
+								<input type='text' readonly class='form-control' id='idProduto' name='idProduto' value='<?php print $produto->idProduto; ?>'>
+							</div>
 						</div>
-					</div>
-					<div class='mb-3 row'>
-						<label for='nomeProduto' class='col-sm-1 col-form-label'>Nome</label>
-						<div class='col-sm-8'>
-							<input type='text' class='form-control' id='nomeProduto' name='nomeProduto' value='<?php print $produto->nomeProduto; ?>' required>
+						<div class='mb-3 row'>
+							<label for='nomeProduto' class='col-sm-1 col-form-label'>Nome</label>
+							<div class='col-sm-8'>
+								<input type='text' class='form-control' id='nomeProduto' name='nomeProduto' value='<?php print $produto->nomeProduto; ?>' required>
+							</div>
 						</div>
-					</div>
-					<div class='mb-3 row'>
-						<label for='preco' class='col-sm-1 col-form-label'>Preço</label>
-						<div class='input-group col-sm-4'>
-							<span class='input-group-text' id='reais-addon'>R$</span>
-							<input type='text' class='form-control' id='preco' aria-label='Preço' aria-describedby='reais-addon' name='preco' value='<?php print $produto->preco; ?>' required>
+						<div class='mb-3 row'>
+							<label for='preco' class='col-sm-1 col-form-label'>Preço</label>
+							<div class='input-group col-sm-4'>
+								<span class='input-group-text' id='reais-addon'>R$</span>
+								<input type='text' class='form-control' id='preco' aria-label='Preço' aria-describedby='reais-addon' name='preco' value='<?php print $produto->preco; ?>' required>
+							</div>
 						</div>
-					</div>
-					<div class='mb-3 row'>
-						<label for='descricao' class='col-sm-1 col-form-label'>Descrição</label>
-						<div class='col-sm-10'>
-							<textarea class='form-control' id='descricao' rows='2' name='descricao' required><?php print $produto->descricao; ?></textarea>
+						<div class='mb-3 row'>
+							<label for='descricao' class='col-sm-1 col-form-label'>Descrição</label>
+							<div class='col-sm-10'>
+								<textarea class='form-control' id='descricao' rows='2' name='descricao' required><?php print $produto->descricao; ?></textarea>
+							</div>
 						</div>
-					</div>
-					<div class='mb-3 row'>
-						<label for='foto' class='col-sm-1 col-form-label'>Foto</label>
-						<div class='col-sm-8'>
-							<input type='text' class='form-control' id='foto' name='foto' value='<?php print $produto->foto; ?>' required>
+						<div class='mb-3 row'>
+							<label for='foto' class='col-sm-1 col-form-label'>Foto</label>
+							<div class='col-sm-8'>
+								<input type='text' class='form-control' id='foto' name='foto' value='<?php print $produto->foto; ?>' required>
+							</div>
 						</div>
-					</div>
-					
+						
+						<div class='mb-3 row'>
+							<div class='col-sm-8 offset-sm-1'>
+								<button class='btn btn-sm btn-success my-sm-0' type='submit'>
+								<img src='<?php print base_url('assets/img/salvar.png'); ?>' alt='Alterar'>Alterar</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</section>
 		</div>
