@@ -75,8 +75,7 @@ class View_core{
 					<small class='row py-2'>
 						<div class='col-md-12 text-center'>
 							<b>Jacareí Cupcakes</b><br>
-							Av. Major Confeiteiro, 100 - Jardim Paraíba<br>
-							Jacareí - SP
+							Av. Major Confeiteiro, 100 - Jardim Paraíba - Jacareí - SP
 						</div>
 					</small>
 				</footer>
