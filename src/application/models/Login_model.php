@@ -7,19 +7,8 @@ class Login_model extends CI_Model {
 	}
 	 
 	public function getUser($login) {
-		$query = $this->db->query("SELECT idUser, nomeUser, login, password, vigenteUser FROM protes_users WHERE login='{$login}';");
+		$query = $this->db->query("SELECT idFuncionario, nome, cpf, senha FROM funcionario WHERE cpf='{$login}';");
 		return $query->row();
-	}
-	
-	public function getParametro($nomeParametro) {
-		$query = $this->db->query("SELECT valorParametro FROM protes_parametros WHERE nomeParametro='{$nomeParametro}'");
-		$row = $query->row();
-		return $row->valorParametro;
-	}
-	public function getOnlineParametro($nomeParametro) {
-		$query = $this->db->query("SELECT valorParametro FROM protes_online_parametros WHERE nomeParametro='{$nomeParametro}'");
-		$row = $query->row();
-		return $row->valorParametro;
 	}
 }
 ?>

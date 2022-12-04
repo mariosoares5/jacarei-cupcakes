@@ -24,34 +24,22 @@ class Login extends CI_Controller {
 					$row = $this->login_model->getUser($data['login']);
 					
 					if($row != NULL) {
-						if(!strcmp($senha, $row->password)) {
-							if($row->vigenteUser==1) { //vigente?
-								$data['erro'] = NULL;
-								// TUDO OK! Agora, passa os dados para a sessão e redireciona o usuário
-								$_SESSION['id_usuario']= $row->idUser;
-								$_SESSION['nome_usuario'] = stripslashes($row->nomeUser);
-								//dados adicionais da sessao
-								$_SESSION['organizacao'] = $this->login_model->getParametro('organizacao');
-								$_SESSION['diretoria'] = $this->login_model->getParametro('diretoria');
-								$_SESSION['gerencia'] = $this->login_model->getParametro('gerencia');
-								$_SESSION['dataBackup'] = $this->login_model->getOnlineParametro('dataBackup');
-								$_SESSION['horaBackup'] = $this->login_model->getOnlineParametro('horaBackup');
-								$_SESSION['nivel1_Classificacao'] = $this->login_model->getParametro('nivel1_Classificacao');
-								$_SESSION['nivel2_Classificacao'] = $this->login_model->getParametro('nivel2_Classificacao');
-								// Usuário logado, redireciona para a página de consulta
-								redirect(base_url(''));
-							}
-							else //Usuario bloqueado 
-								$data['erro'] = 'Seu usu&aacute;rio n&atilde;o est&aacute; ativo! Contate o administrador para continuar.';
+						if(!strcmp($senha, $row->senha)) {
+							$data['erro'] = NULL;
+							// TUDO OK! Agora, passa os dados para a sessão e redireciona o usuário
+							$_SESSION['id_usuario']= $row->idFuncionario;
+							$_SESSION['nome_usuario'] = stripslashes($row->nome);
+							// Usuário logado, redireciona para a página de consulta
+							redirect(base_url(''));
 						} else //Senha invalida 
-							$data['erro'] = 'Login ou senha inv&aacute;lidos!';
+							$data['erro'] = 'Login ou se777nha inv&aacute;lidos!';
 					} else 
 						$data['erro'] = 'Login ou senha inv&aacute;lidos!';
 				}
 			
 				if($data['erro'] != NULL) {
-					$data['WEB_VERSION'] = $this->view_core->getWEB_VERSION();
-					$data['head'] = $this->view_core->getHead('ProtES | Consulte entradas e saídas de procedimentos');
+					$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Login');
+					$data['header'] = $this->view_core->getHeader();
 					$this->load->view('login_page', $data);
 				}
 			}

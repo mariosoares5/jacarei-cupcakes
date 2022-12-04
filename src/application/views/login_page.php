@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<body class='text-center'>
 		<?php print $header; ?>
 		<form class='form-signin' action='<?php echo base_url('login');?>' method='post'>
-			<img width='64' height='64' alt='ProtES' src='<?php echo base_url('assets/img/jac_cupcakes.png');?>' title='ProtES | Protocolo de entrada e saída de procedimentos'>
+			<img width='64' height='64' alt='Jacareí Cupcakes' src='<?php echo base_url('assets/img/jac_cupcakes.png');?>'>
 			<h2>Jacareí Cupcakes <small><i></i></small></h2>
 			<h4 class='mb-4'>Painel do funcionário</h4>
 			<input type='hidden' name='preenchido' value=1>

@@ -34,7 +34,7 @@ class View_core{
 		$logo_img = base_url('assets/img/jac_cupcakes.png');
 		$menu = "<nav class='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
 					<span class='navbar-brand'>
-						<a href='{$jac_cupcakes_home}'><img src='{$logo_img}' width='30' height='30' class='d-inline-block align-top' alt='ProtES'></a>
+						<a href='{$jac_cupcakes_home}'><img src='{$logo_img}' width='30' height='30' class='d-inline-block align-top' alt='Jacareí Cupcakes'></a>
 						Jacareí Cupcakes <small><i></i></small>
 					</span>
 					<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation'>
@@ -44,7 +44,7 @@ class View_core{
 						<ul class='navbar-nav mr-auto'>
 						</ul>
 						<form class='form-inline' action='".base_url('login')."'>
-							<button class='btn btn-sm btn-outline-primary my-2 my-sm-0' type='submit'>Login</button>
+							<button class='btn btn-sm btn-outline-secondary my-2 my-sm-0' type='submit'>Login</button>
 						</form>
 					</div>
 					
@@ -57,7 +57,7 @@ class View_core{
 		$logo_img = base_url('assets/img/jac_cupcakes.png');
 		return	"<nav class='navbar fixed-top navbar-expand-lg navbar-light bg-light'>
 					<span class='navbar-brand'>
-						<a href='{$jac_cupcakes_home}'><img src='{$logo_img}' width='30' height='30' class='d-inline-block align-top' alt='ProtES'></a>
+						<a href='{$jac_cupcakes_home}'><img src='{$logo_img}' width='30' height='30' class='d-inline-block align-top' alt='Jacareí Cupcakes'></a>
 						Jacareí Cupcakes <small><i></i></small>
 					</span>
 				</nav>";
