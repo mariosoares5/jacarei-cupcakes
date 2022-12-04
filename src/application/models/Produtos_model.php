@@ -31,5 +31,16 @@ class Produtos_model extends CI_Model {
 		$query = $this->db->query("SELECT idProduto, nomeProduto, preco, descricao, foto FROM produto WHERE idProduto={$id};");
 		return $query->row();
 	}
+	
+	public function addProduto($nomeProduto, $preco, $descricao, $foto, $idFuncionario) {
+		$data = array(
+			'nomeProduto' => $nomeProduto,
+			'preco' => $preco,
+			'descricao' => $descricao,
+			'foto' => $foto,
+			'idFuncionario' => $idFuncionario
+		);
+		return $this->db->insert('produto',$data);
+	}
 }
 ?>

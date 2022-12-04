@@ -14,8 +14,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<li class='breadcrumb-item active' aria-current='page'>Produtos</li>
 						</ol>
 					</nav>
-					<h3>Produtos <form class='form-inline' method='post' action='<?php print base_url('produtos/novo'); ?>'><button class='btn btn-sm btn-primary my-sm-0' type='submit'>
-									<img src='<?php print base_url('assets/img/novo.png'); ?>' alt='Novo'>Novo</button></form></h3>
+					<h3>Produtos <button class='btn btn-sm btn-primary my-sm-0' onclick="window.location.href = '<?php print base_url('produtos/novo'); ?>'">
+								<img src='<?php print base_url('assets/img/novo.png'); ?>' alt='Novo'>Novo</button> </h3>
+					
 					<table class='table'>
 						<thead>
 							<tr>
@@ -44,12 +45,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 										<td>{$lista_produtos[$i][3]}</td>
 										<td>{$lista_produtos[$i][4]}</td>
 										<td>{$lista_produtos[$i][5]}</td>
-										<td><form class='form-inline' method='post' action='{$url_alterar}'>
-											<button class='btn btn-sm btn-warning my-sm-0' type='submit'>
-											<img src='{$url_img}/alterar.png' alt='Alterar'></button></form></td>
-										<td><form class='form-inline' method='post' action='{$url_excluir}'>
-											<button class='btn btn-sm btn-danger my-sm-0' type='submit'>
-											<img src='{$url_img}/excluir.png' alt='Excluir'></button></form></td>
+										<td><button class='btn btn-sm btn-warning my-sm-0' onclick=\"window.location.href = '{$url_alterar}'\">
+											<img src='{$url_img}/alterar.png' alt='Alterar'></button></td>
+										<td><button class='btn btn-sm btn-danger my-sm-0' onclick=\"window.location.href = '{$url_excluir}'\">
+											<img src='{$url_img}/excluir.png' alt='Excluir'></button></td>
 									</tr>";
 								}
 							}

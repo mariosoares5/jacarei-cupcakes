@@ -13,6 +13,22 @@ class Produtos extends CI_Controller {
 	}
 	
 	public function novo() {
+		if(!isset($_POST['nomeProduto'])) {
+			$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Editar produto');
+			$data['menu'] = $this->view_core->getMenu('produtos');
+			
+			//mostra tela de cadastro de produto
+			$this->load->view('produto_novo_page', $data);
+		}
+		else {
+			$this->load->model('produtos_model');
+			$this->produtos_model->addProduto(
+				$_POST['nomeProduto'], $_POST['preco'], $_POST['descricao'],
+				$_POST['foto'], $_SESSION['id_usuario'] );
+			
+			//carrega a lista com o novo produto
+			redirect(base_url('produtos'));
+		}
 	}
 	
 	public function editar($produto) {

@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<nav aria-label='breadcrumb'>
 						<ol class='breadcrumb'>
 							<li class='breadcrumb-item'><a href='<?php print base_url(''); ?>'>Home</a></li>
-							<li class='breadcrumb-item'><a href='<?php print base_url('produtos'); ?>'>Produto</a></li>
+							<li class='breadcrumb-item'><a href='<?php print base_url('produtos'); ?>'>Produtos</a></li>
 							<li class='breadcrumb-item active' aria-current='page'><?php print $produto->nomeProduto; ?></li>
 						</ol>
 					</nav>
@@ -26,26 +26,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class='mb-3 row'>
 						<label for='nomeProduto' class='col-sm-1 col-form-label'>Nome</label>
 						<div class='col-sm-8'>
-							<input type='text' class='form-control' id='nomeProduto' name='nomeProduto' value='<?php print $produto->nomeProduto; ?>'>
+							<input type='text' class='form-control' id='nomeProduto' name='nomeProduto' value='<?php print $produto->nomeProduto; ?>' required>
 						</div>
 					</div>
 					<div class='mb-3 row'>
 						<label for='preco' class='col-sm-1 col-form-label'>Preço</label>
 						<div class='input-group col-sm-4'>
 							<span class='input-group-text' id='reais-addon'>R$</span>
-							<input type='text' class='form-control' id='preco' aria-label='Preço' aria-describedby='reais-addon' name='preco' value='<?php print $produto->preco; ?>'>
+							<input type='text' class='form-control' id='preco' aria-label='Preço' aria-describedby='reais-addon' name='preco' value='<?php print $produto->preco; ?>' required>
 						</div>
 					</div>
 					<div class='mb-3 row'>
 						<label for='descricao' class='col-sm-1 col-form-label'>Descrição</label>
 						<div class='col-sm-10'>
-							<textarea class='form-control' id='descricao' rows='2' name='descricao'><?php print $produto->descricao; ?></textarea>
+							<textarea class='form-control' id='descricao' rows='2' name='descricao' required><?php print $produto->descricao; ?></textarea>
 						</div>
 					</div>
 					<div class='mb-3 row'>
 						<label for='foto' class='col-sm-1 col-form-label'>Foto</label>
 						<div class='col-sm-8'>
-							<input type='text' class='form-control' id='foto' name='foto' value='<?php print $produto->foto; ?>'>
+							<input type='text' class='form-control' id='foto' name='foto' value='<?php print $produto->foto; ?>' required>
 						</div>
 					</div>
 					
