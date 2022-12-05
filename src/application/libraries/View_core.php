@@ -36,21 +36,26 @@ class View_core{
 					<span class='navbar-brand'>
 						<a href='{$jac_cupcakes_home}'><img src='{$logo_img}' width='30' height='30' class='d-inline-block align-top' alt='Jacareí Cupcakes'></a>
 						Jacareí Cupcakes <small><i>";
-						if($active == 'produtos')
-							$menu .= "<a href='{$jac_cupcakes_home}produtos'>- Painel do funcionário</a>";
+						if($active == 'produtos' || $active == 'funcionarios')
+							$menu .= "- Painel do funcionário";
 				$menu .= "</i></small>
 					</span>
 					<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarText' aria-controls='navbarText' aria-expanded='false' aria-label='Toggle navigation'>
 						<span class='navbar-toggler-icon'></span>
 					</button>
 					<div class='collapse navbar-collapse' id='navbarText'>
-						<ul class='navbar-nav mr-auto'>
-						</ul>";
-						if($active == 'produtos')
-							$menu .= "<span class='navbar-text'>Bem-Vindo <b>{$_SESSION["nome_usuario"]}</b>! &nbsp;</span>
+						<ul class='navbar-nav mr-auto'>";
+						if($active == 'produtos' || $active == 'funcionarios') {
+							$menu .= "<li class='nav-item"; if($active=='produtos')$menu.=" active"; $menu.="'>
+									<a class='nav-link' href='{$jac_cupcakes_home}produtos'>Produtos</a>
+								</li>
+								<li class='nav-item"; if($active=='funcionarios')$menu.=" active"; $menu.="'>
+									<a class='nav-link' href='{$jac_cupcakes_home}funcionarios'>Funcionários</a>
+								</li>
+							</ul><span class='navbar-text'>Bem-Vindo <b>{$_SESSION["nome_usuario"]}</b>! &nbsp;</span>
 							<button class='btn btn-sm btn-outline-primary my-2 my-sm-0' onclick=\"window.location.href = '".base_url('login/sair')."'\">Sair</button>";
-						else
-							$menu .= "<button class='btn btn-sm btn-outline-secondary my-2 my-sm-0' onclick=\"window.location.href = '".base_url('login')."'\">Login</button>";
+						}else
+							$menu .= "</ul><button class='btn btn-sm btn-outline-secondary my-2 my-sm-0' onclick=\"window.location.href = '".base_url('login')."'\">Login</button>";
 			$menu .= "	</form>
 					</div>
 					
