@@ -37,21 +37,19 @@ class Funcionarios_model extends CI_Model {
 		return $this->db->insert('funcionario',$data);
 	}
 	
-	public function updateProduto($idProduto, $nomeProduto, $preco, $descricao, $foto, $idFuncionario) {
+	public function updateFuncionario($idFuncionario, $nome, $cpf, $senha) {
 		$data = array(
-			'nomeProduto' => $nomeProduto,
-			'preco' => $preco,
-			'descricao' => $descricao,
-			'foto' => $foto,
-			'idFuncionario' => $idFuncionario
+			'nome' => $nome,
+			'cpf' => $cpf,
+			'senha' => $senha
 		);
-		$this->db->where('idProduto', $idProduto);
-		return $this->db->update('produto',$data);
+		$this->db->where('idFuncionario', $idFuncionario);
+		return $this->db->update('funcionario',$data);
 	}
 	
-	public function deleteProduto($idProduto) {
-		$this->db->where('idProduto', $idProduto);
-		return $this->db->delete('produto');
+	public function deleteFuncionario($idFuncionario) {
+		$this->db->where('idFuncionario', $idFuncionario);
+		return $this->db->delete('funcionario');
 	}
 }
 ?>

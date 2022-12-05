@@ -5,7 +5,7 @@ class Funcionarios extends CI_Controller {
 	public function index() {
 		$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Painel do funcionário');
 		$data['menu'] = $this->view_core->getMenu('funcionarios');
-		//carrega lista de produtos
+		//carrega lista de funcionários
 		$this->load->model('funcionarios_model');
 		$data['lista_funcionarios'] = $this->funcionarios_model->getFuncionarios();
 		$this->load->view('funcionarios_page', $data);
@@ -28,43 +28,43 @@ class Funcionarios extends CI_Controller {
 		}
 	}
 	
-	public function editar($produto) {
-		$this->load->model('produtos_model');
-		if(!isset($_POST['idProduto'])) {
-			$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Alterar produto');
-			$data['menu'] = $this->view_core->getMenu('produtos');
-			//carrega dados do produto para edição
-			$data['produto'] = $this->produtos_model->getProduto($produto);
-			if($data['produto'] != NULL)
-				$this->load->view('produto_edit_page', $data);
-			else //ao tentar acessar via url um produto invalido, redireciona para lista
-				redirect(base_url('produtos'));
+	public function editar($funcionario) {
+		$this->load->model('funcionarios_model');
+		if(!isset($_POST['idFuncionario'])) {
+			$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Alterar funcionário');
+			$data['menu'] = $this->view_core->getMenu('funcionarios');
+			//carrega dados do funcionario para edição
+			$data['funcionario'] = $this->funcionarios_model->getFuncionario($funcionario);
+			if($data['funcionario'] != NULL)
+				$this->load->view('funcionario_edit_page', $data);
+			else //ao tentar acessar via url um funcionario invalido, redireciona para lista
+				redirect(base_url('funcionarios'));
 		}
 		else {
-			$this->produtos_model->updateProduto( $_POST['idProduto'],
-				$_POST['nomeProduto'], $_POST['preco'], $_POST['descricao'],
-				$_POST['foto'], $_SESSION['id_usuario'] );
-			//carrega a lista com o produto alterado
-			redirect(base_url('produtos'));
+			$senha_sha256 = strtoupper(hash('sha256', trim($_POST['cpf']).trim($_POST['senha'])));
+			$this->funcionarios_model->updateFuncionario( $_POST['idFuncionario'],
+				$_POST['nome'], $_POST['cpf'], $senha_sha256 );
+			//carrega a lista com o funcionario alterado
+			redirect(base_url('funcionarios'));
 		}
 	}
 	
-	public function excluir($produto) {
-		$this->load->model('produtos_model');
-		if(!isset($_POST['idProduto'])) {
-			$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Excluir produto');
-			$data['menu'] = $this->view_core->getMenu('produtos');
-			//carrega dados do produto para confirmação da exclusão
-			$data['produto'] = $this->produtos_model->getProduto($produto);
-			if($data['produto'] != NULL)
-				$this->load->view('produto_delete_page', $data);
-			else //ao tentar acessar via url um produto invalido, redireciona para lista
-				redirect(base_url('produtos'));
+	public function excluir($funcionario) {
+		$this->load->model('funcionarios_model');
+		if(!isset($_POST['idFuncionario'])) {
+			$data['head'] = $this->view_core->getHead('Jacareí Cupcakes | Excluir funcionário');
+			$data['menu'] = $this->view_core->getMenu('funcionarios');
+			//carrega dados do funcionário para confirmação da exclusão
+			$data['funcionario'] = $this->funcionarios_model->getFuncionario($funcionario);
+			if($data['funcionario'] != NULL)
+				$this->load->view('funcionario_delete_page', $data);
+			else //ao tentar acessar via url um funcionário invalido, redireciona para lista
+				redirect(base_url('funcionarios'));
 		}
 		else {
-			$this->produtos_model->deleteProduto($_POST['idProduto']);
-			//carrega a lista após deletar produto
-			redirect(base_url('produtos'));
+			$this->funcionarios_model->deleteFuncionario($_POST['idFuncionario']);
+			//carrega a lista após deletar funcionário
+			redirect(base_url('funcionarios'));
 		}
 	}
 }
